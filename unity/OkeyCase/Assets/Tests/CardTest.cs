@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-
+using System.Linq;
 namespace Tests
 {
 
@@ -57,9 +57,11 @@ namespace Tests
                     if (deck.slots[i] != null)
                     {
                         count++;
-                        Debug.Log(deck.slots[i].Color+" "+ deck.slots[i].Number);
+                        Debug.Log(deck.slots[i].ToString());
                     }
                 }
+                Debug.Log("-- Sorted ---");
+                deck.Sort().ForEach(Debug.Log);
                 Assert.AreEqual(count, 14);
             }
         }
@@ -68,12 +70,45 @@ namespace Tests
 
     public class Deck
     {
+
+        // max 9 grup olabilir
+        // BIR GRUP MIN 3 MAX 15 taştan oluşur
+        //  GRUPLA -> 777 veya 123
+        // GRUPLARI KOMBINE ET
+        // UYUMSUZ KOMBINLERI ELE
+        // KOMBINLERI KALAN TAŞ'A GÖRE SIRALA
+
+
         public Card[] slots = new Card[28];
 
         public Deck()
         {
-
+            // Deck constructor
         }
+
+        public void Combine() { }
+        public void Group() { }
+        public void Group777() { }
+        public void Group123() { }
+
+        public List<Card> List()
+        {
+            List<Card> list = new List<Card>();
+            for (int i = 0; i < slots.Length; i++)
+                if (slots[i] != null)
+                    list.Add(slots[i]);
+           return list;
+        }
+
+        public List<Card> Sort()
+        {
+            List<Card> list = List();
+
+            list.Sort((a, b) =>(a.Number-b.Number));
+
+            return list;
+        }
+
         public void AddCard(Card card)
         {
             for(int i = 0; i < slots.Length; i++)
@@ -173,9 +208,14 @@ namespace Tests
         }
 
         // Number getter
-        public uint Number
+        public int Number
         {
-            get { return (id % 13) + 1; }
+            get { return (int)(id % 13) + 1; }
+        }
+
+        public override string ToString()
+        {
+            return Color + " " + Number + " [ " + id + " ]";
         }
 
     }
