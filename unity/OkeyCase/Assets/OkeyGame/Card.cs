@@ -2,17 +2,18 @@
 {
     public class Card
     {
-        // id index of Card
-        public uint id = 0;
+        public uint id = 0;  // id index of Card
 
         // Constructor
-        public Card(uint _id) {
+        public Card(uint _id)
+        {
             id = _id;
         }
 
         // Colors
-        public enum ColorType {
-            RED =0,
+        public enum ColorType
+        {
+            RED = 0,
             BLUE = 1,
             BLACK = 2,
             YELLOW = 3
@@ -25,9 +26,24 @@
         }
 
         // Number getter
-        public uint Number
+        public int Number
         {
-            get { return (id % 13) + 1; }
+            get { return (int)(id % 13) + 1; }
+        }
+
+        public override string ToString()
+        {
+            return Color + " " + Number + " [ " + id + " ]";
+        }
+
+        public bool SameWith(Card card)
+        {
+            return card.Number == this.Number && card.Color == this.Color;
+        }
+
+        public static int GetID(ColorType color, int number, int team = 0)
+        {
+            return ((int)color) * 13 + number - 1 + team * 52;
         }
 
     }
