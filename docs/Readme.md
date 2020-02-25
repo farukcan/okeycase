@@ -14,15 +14,15 @@ Documentation for OkeyCase
 - [x] 777 Combine Algorithm
 - [x] Smart Combine Algorithm
 - [x] Test Case's of Algorithms
-- [ ] Distribution Animation
-- [ ] The Deck and The Table UI
-- [ ] Polling for Cards
-- [ ] Drag and Drop on Deck
-- [ ] Okey Card Indicator
-- [ ] 123 Combine Button
-- [ ] 777 Combine Button
-- [ ] Smart Combine Button
-- [ ] Locating card groups to the deck ( 2 row with 14 slots and 1 slot spacing)
-- [ ] After Combine Animations
-- [ ] Reverse the okey cards when long touch
-- [ ] Mobile compatibility
+- [x] Distribution Animation
+- [x] The Deck and The Table UI
+- [x] Polling for Cards
+- [x] Drag and Drop on Deck
+- [x] Okey Card Indicator
+- [x] 123 Combine Button
+- [x] 777 Combine Button
+- [x] Smart Combine Button
+- [x] Locating card groups to the deck ( 2 row with 14 slots and 1 slot spacing)
+- [x] After Combine Animations
+- [x] Reverse the okey cards when long touch
+- [x] Mobile compatibility

@@ -102,7 +102,7 @@ namespace OkeyGame
 
                     if (card.Number == card2.Number)
                     {
-                        if (card.Color != card2.Color)
+                        if (temp_group.members.All((cardSlot)=> cardSlot.card.Color != card2.Color)  )
                         {
 
                             temp_group.members.Add(normalCards[jindex]);

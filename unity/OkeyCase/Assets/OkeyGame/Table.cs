@@ -7,7 +7,7 @@ namespace OkeyGame
     public class Table
     {
         public Deck[] decks;
-        private List<Card> cards = new List<Card>();
+        public List<Card> cards = new List<Card>();
 
         public Card okey;
 
