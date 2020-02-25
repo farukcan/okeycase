@@ -41,25 +41,18 @@ namespace OkeyGame
                     groups = Group(Sort());
                     break;
             }
-
-
             CardCombine bestCombine = new CardCombine();
 
-
-            int debug_iteration = 0; //debug
-            int debug_iteration_validation = 0;//debug
 
             for (int i = 1; i < 6; i++)
             {
                 foreach (IEnumerable<CardGroup> combine in Combiner.Combinations(groups, i))
                 {
                     int count = combine.Sum((group) => group.members.Count);
-                    debug_iteration++;//debug
                     if (count > bestCombine.CardCount)
                     {
                         HashSet<int> slotIDs = new HashSet<int>();
                         bool valid = combine.All((group) => group.members.All((card) => slotIDs.Add(card.slot)));
-                        debug_iteration_validation++;//debug
                         if (valid)
                         {
                             bestCombine.members = combine.ToList();
@@ -191,6 +184,11 @@ namespace OkeyGame
                             {
                                 groups.Add(temp_group.Copy());
                             }
+                            continue;
+                        }
+
+                        if (card2.Number == (number % 13))
+                        {
                             continue;
                         }
 

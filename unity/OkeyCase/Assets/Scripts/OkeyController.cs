@@ -88,7 +88,7 @@ public class OkeyController : MonoBehaviour
         {
                 int index = 0;
                 CardCombine combine = deck.Combine(method);
-                List<CardOnDeck> list = deck.List();
+                List<CardOnDeck> list = deck.Sort();
                 foreach(CardGroup group in combine.members)
                 {
                     if(index<14 && (index + group.members.Count) > 13)

@@ -231,6 +231,45 @@ namespace Tests
             Assert.True(bestCombine.CardCount == 11);
 
         }
+        [Test]
+        public void CombineTest2()
+        {
+            Table table = new Table();
+
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 4)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 5)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 6)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 4,1)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 10)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLUE, 10)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLUE, 11)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLUE, 12)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.RED, 1)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLUE, 3)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.RED, 5)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLUE, 11,1)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.BLACK, 1)));
+            table.decks[0].AddCard(table.GetCard(Card.GetID(Card.ColorType.YELLOW, 9)));
+
+            table.okey = table.GetCard(Card.GetID(Card.ColorType.RED, 10));
+
+            CardCombine bestCombine = table.decks[0].Combine();
+
+            Debug.Log("# Best Combine " + bestCombine.CardCount);
+
+            bestCombine.members.ForEach((group) =>
+            {
+                Debug.Log("=== ");
+
+                group.members.ForEach((m) =>
+                {
+                    Debug.Log("- " + m.card.ToString());
+                });
+            });
+
+           // Assert.True(bestCombine.CardCount == 11);
+
+        }
 
     }
 
@@ -474,6 +513,11 @@ namespace Tests
                                 groups.Add(temp_group.Copy());
                                 Debug.Log(" - - new group");
                             }
+                            continue;
+                        }
+
+                        if (card2.Number == (number % 13 ))
+                        {
                             continue;
                         }
 

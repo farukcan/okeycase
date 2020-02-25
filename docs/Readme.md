@@ -1,8 +1,37 @@
 # Documents
 
-Documentation for OkeyCase
+This repository is a prototype for Turkish Okey Game
 
 
+
+### Demo 
+
+* Please check "Releases" on github for APK files.
+
+
+
+## Structre
+
+* /docs : Documents
+* /release : apks and build files (ignored on git)
+* /server : server/backend with node.js
+* /unity : Unity Engine files and scripts
+  * /unity/OkeyCase/Assets/Animations : animations
+  * /unity/OkeyCase/Assets/Fonts : fonts
+  * /unity/OkeyCase/Assets/OkeyGame  : library , classes , algoritms
+  * /unity/OkeyCase/Assets/Scripts :  Controllers and UI Scripts
+  * /unity/OkeyCase/Assets/Tests : Unit Tests for OkeyGame Library
+  * /unity/OkeyCase/Assets/Scenes/scene : scene
+
+## Screenshots
+
+### 1
+
+![](ss1.jpg)
+
+### 2
+
+![](ss2.jpg)
 
 ## TODO
 
