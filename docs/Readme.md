@@ -25,6 +25,10 @@ This repository is a prototype for Turkish Okey Game
 
 ## Screenshots
 
+### Video
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/o-JoDoAGtzA/0.jpg)](https://www.youtube.com/watch?v=o-JoDoAGtzA)
+
+
 ### 1
 
 ![](ss1.jpg)
